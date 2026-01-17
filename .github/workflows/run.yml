@@ -26,7 +26,8 @@ jobs:
           BASE_URL: ${{secrets.BASE_URL}}
           EMAIL: ${{secrets.EMAIL}}
           PASSWORD: ${{secrets.PASSWORD}}
-          SERVER_KEY: ${{secrets.SERVER_KEY}}
+          TG_BOT_TOKEN: ${{secrets.TG_BOT_TOKEN}}
+          TG_USER_ID: ${{secrets.TG_USER_ID}}
         run: |
           python main.py
       - name: Keep alive

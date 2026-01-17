@@ -10,4 +10,7 @@ USER_INFO_URL = env['BASE_URL'] + '/api/v1/user/info'
 CONVERT_TRAFFIC_URL = env['BASE_URL'] + '/api/v1/user/checkIn'
 EMAIL = env['EMAIL']
 PASSWORD = env['PASSWORD']
-SERVER_KEY = env['SERVER_KEY']
+
+# Telegram 配置
+TG_BOT_TOKEN = env.get('TG_BOT_TOKEN')
+TG_USER_ID = env.get('TG_USER_ID')

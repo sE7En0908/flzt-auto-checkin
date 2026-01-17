@@ -2,7 +2,7 @@ name: "FLZT 每日签到 + 转换流量"
 
 on:
   schedule:
-    - cron: "17 1,17 * * *"
+    - cron: "27 1,17 * * *"
   workflow_dispatch:
 
 jobs:

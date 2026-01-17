@@ -1,5 +1,5 @@
 import requests
-from notification import ServerChanNotification
+from notification import TelegramNotification
 from env import EMAIL, PASSWORD, LOGIN_URL, USER_INFO_URL, CONVERT_TRAFFIC_URL, CHECK_IN_URL
 from loguru import logger
 
@@ -61,6 +61,10 @@ class FLZT:
         except Exception as e:
             logger.error('转换流量失败', e)
             return
-        notification = ServerChanNotification(
-            title='FLZT签到', content=f'签到流量转换成功，已转换的签到流量：{format_traffic(traffic)}')
+        
+        # 触发 Telegram 通知
+        notification = TelegramNotification(
+            title='FLZT 签到任务', 
+            content=f'流量转换成功！\n已转换签到流量：{format_traffic(traffic)}'
+        )
         notification.notify()
